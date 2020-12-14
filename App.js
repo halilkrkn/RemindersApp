@@ -1,41 +1,67 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View,TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, FlatList, Modal } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import {AntDesign} from '@expo/vector-icons'
 import tempData from './src/service/tempData'
 import ReminderList from './src/components/ReminderList' 
+import AddListModal from './src/components/AddListModal'
 
 export default class App extends React.Component {
+
+  state = {
+    addTodoVisible: false
+  }
+
+  toggleAddTodoModal() {
+    this.setState({addTodoVisible: !this.state.addTodoVisible})
+  }
+
+  renderList = list =>{
+    return <ReminderList list={list}/>
+  }
+
+
   render() {
     return (
-      <View style = {styles.container}>
-      <View style={{flexDirection:"row"}}>
-          <View style={styles.divider}/>
+      <View style={styles.container}>
+        <Modal
+          animationType="slide"
+          visible={this.state.addTodoVisible}
+          onRequestClose={() => this.toggleAddTodoModal()}
+        >
+          <AddListModal closeModal={() => this.toggleAddTodoModal()} />
+        </Modal>
+        <View style={{ flexDirection: "row" }}>
+          <View style={styles.divider} />
           <Text style={styles.title}>
-              Reminders <Text style={{fontWeight:"300",color:colors.blue}}>Lists</Text>
+            Reminders{" "}
+            <Text style={{ fontWeight: "300", color: colors.blue }}>Lists</Text>
           </Text>
-          <View style={styles.divider}/>
-      </View>
-      
-      <View style = {{marginVertical:48}}>
-          <TouchableOpacity style={styles.addList}>
-              <AntDesign name="plus" size={16} color={colors.blue}/>
-          </TouchableOpacity>
-      
-          <Text style= {styles.add}>Add Reminder</Text>
-      </View>
+          <View style={styles.divider} />
+        </View>
 
-      <View style = {{height:275, paddingLeft:32}}>
-        <FlatList
-          data = {tempData}
-          keyExtractor={item => item.name}
-          horizontal ={true}
-          showsHorizontalScrollIndicator={false}
-          renderItem={({item}) => <ReminderList list = {item}/>}
-        />
+        <View style={{ marginVertical: 48 }}>
+          <TouchableOpacity
+            style={styles.addList}
+            onPress={() => this.toggleAddTodoModal()}
+          >
+            <AntDesign name="plus" size={16} color={colors.blue} />
+          </TouchableOpacity>
+
+          <Text style={styles.add}>Add Reminder</Text>
+        </View>
+
+        <View style={{ height: 275, paddingLeft: 32 }}>
+          <FlatList
+            data={tempData}
+            keyExtractor={(item) => item.name}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => this.renderList(item)}
+          />
+        </View>
       </View>
-  </View>
     );
   }
 }
@@ -60,7 +86,7 @@ const styles = StyleSheet.create({
   title: {
 
       fontSize: 35,
-      fontWeight:"800",
+      fontWeight:"bold",
       color:colors.black,
       paddingHorizontal:64
 
@@ -77,7 +103,7 @@ const styles = StyleSheet.create({
   
   add: {
       color:colors.blue,
-      fontWeight: "600",
+      fontWeight: "800",
       fontSize: 14,
       marginTop: 8
   }

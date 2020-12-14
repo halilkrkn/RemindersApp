@@ -1,9 +1,8 @@
 import React from 'react'
 import { Text, StyleSheet, View, TouchableOpacity,FlatList } from 'react-native'
 import {AntDesign} from '@expo/vector-icons'
-import colors from './Colors';
-import tempData from '../service/tempData'
-import ReminderList from '../components/ReminderList'       
+import colors from '../Colors/Colors';
+       
 
 export default class HomeScreen extends React.Component {
     render() {
