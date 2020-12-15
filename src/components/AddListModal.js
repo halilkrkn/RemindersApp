@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, KeyboardAvoidingView,TouchableOpacity,TextInput } from 'react-native'
 import {AntDesign} from '@expo/vector-icons'
 import colors from '../Colors/Colors'
-import tempData from '../service/tempData'
 
 export default class AddListModal extends Component {
 
@@ -16,11 +15,9 @@ export default class AddListModal extends Component {
     createTodo = () => {
         const {name,color} = this.state
 
-        tempData.push({
-            name,
-            color,
-            todos: []
-        })
+        const list = {name, color}
+
+        this.props.addList(list)
 
         this.setState({name: ""})
         this.props.closeModal()

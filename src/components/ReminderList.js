@@ -17,7 +17,7 @@ export default class ReminderList extends React.Component {
     render(){
       const list = this.props.list;
 
-      const completedCount = list.todos.filter((todo) => todo.completed).length;
+      const completedCount = list.todos.filter(todo => todo.completed).length;
       const remainingCount = list.todos.length - completedCount;
 
       return (
@@ -27,7 +27,11 @@ export default class ReminderList extends React.Component {
             visible={this.state.showListVisible}
             onRequestClose={() => this.toggleListModal()}
           >
-            <ReminderModal list={list} closeModal={() => this.toggleListModal()}/>
+            <ReminderModal
+              list={list}
+              closeModal={() => this.toggleListModal()}
+              updateList={this.props.updateList}
+            />
           </Modal>
 
           <TouchableOpacity
@@ -39,11 +43,11 @@ export default class ReminderList extends React.Component {
             </Text>
             <View>
               <View style={{ alignItems: "center" }}>
-                <Text style={styles.count}>{completedCount}</Text>
+                <Text style={styles.count}>{remainingCount}</Text>
                 <Text style={styles.subtitle}>Remaining</Text>
               </View>
               <View style={{ alignItems: "center" }}>
-                <Text style={styles.count}>{remainingCount}</Text>
+                <Text style={styles.count}>{completedCount}</Text>
                 <Text style={styles.subtitle}>Completed</Text>
               </View>
             </View>
