@@ -95,7 +95,7 @@ export default class ReminderModal extends Component {
     const completedCount = list.todos.filter((todo) => todo.completed).length;
 
     return (
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+      <KeyboardAvoidingView style={{ flex: 1}} behavior="height">
         <SafeAreaView style={styles.container}>
           <TouchableOpacity
             style={{ position: "absolute", top: 24, right: 12, zIndex: 10 }}
@@ -114,7 +114,7 @@ export default class ReminderModal extends Component {
             <View>
               <Text style={styles.title}>{list.name}</Text>
               <Text style={styles.taskCount}>
-                {completedCount} of {taskCount} tasks
+                Görevlerin {taskCount} / {completedCount} Yapıldı.
               </Text>
             </View>
           </View>
@@ -136,7 +136,7 @@ export default class ReminderModal extends Component {
              value={this.state.newTodo}
              />
             <TouchableOpacity
-              style={[styles.addTodo, { backgroundColor: list.color }]}
+              style={[styles.addTodo, { backgroundColor: list.color,}]}
               onPress={() => this.addTodo()}
             >
               <AntDesign name="plus" size={16} color={colors.white} />
@@ -187,12 +187,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginRight: 8,
     paddingHorizontal: 8,
+    marginBottom:15
   },
   addTodo: {
     borderRadius: 6,
-    padding: 14,
+    padding: 15,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom:15
   },
   todoContianer: {
     paddingVertical: 16,

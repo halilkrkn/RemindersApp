@@ -41,7 +41,7 @@ export default class AddListModal extends Component {
 
     render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <KeyboardAvoidingView style={styles.container} behavior="height">
         <TouchableOpacity
           style={styles.touchableOpacity}
           onPress={this.props.closeModal}
@@ -54,11 +54,11 @@ export default class AddListModal extends Component {
         </TouchableOpacity>
 
         <View style={styles.createTodoList}>
-          <Text style={styles.title}> Create Remainder Lists</Text>
+          <Text style={styles.title}> Hatırlatıcı Listesi Oluşturun</Text>
 
           <TextInput
             style={styles.input}
-            placeholder="List Name?"
+            placeholder="Hatırlatıcı Listesi Başlığınız?"
             onChangeText={(text) => this.setState({ name: text })}
           />
 
@@ -72,7 +72,7 @@ export default class AddListModal extends Component {
           >
             <Text style={{ color: colors.white, fontWeight:"normal" }}>
               {" "}
-              Create!{" "}
+              Oluştur{" "}
             </Text>
           </TouchableOpacity>
         </View>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   touchableOpacity: {
     position: "absolute",
-    top: 40,
+    top: 20,
     right: 10,
   },
   createTodoList: {

@@ -53,6 +53,11 @@ class Firebase {
     ref.add(list);
   }
 
+  deleteList(list){
+    let ref= this.ref
+    ref.doc(list.id).delete(list)
+  }
+
   updateList(list) {
 
     let ref = this.ref

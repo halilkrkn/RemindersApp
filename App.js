@@ -49,7 +49,7 @@ export default class App extends React.Component {
   }
 
   renderList = list =>{
-    return <ReminderList list={list} updateList={this.updateList}/>
+    return <ReminderList list={list} updateList={this.updateList} deleteList={this.deleteList}/>
   }
 
   addList = list => {
@@ -65,6 +65,8 @@ export default class App extends React.Component {
   updateList = list => {
    firebase.updateList(list)
   }
+
+
 
   render() {
 
@@ -96,7 +98,7 @@ export default class App extends React.Component {
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
-            Reminders{" "}
+            Reminder{" "}
             <Text style={{ fontWeight: "300", color: colors.blue }}>Lists</Text>
           </Text>
           <View style={styles.divider} />
@@ -110,7 +112,7 @@ export default class App extends React.Component {
             <AntDesign name="plus" size={16} color={colors.blue} />
           </TouchableOpacity>
 
-          <Text style={styles.add}>Add Reminder</Text>
+          <Text style={styles.add}>Hatırlatıcı Ekle</Text>
         </View>
 
         <View style={{ height: 275, paddingLeft: 32 }}>
