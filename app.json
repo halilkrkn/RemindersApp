@@ -17,16 +17,16 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.halilkrkn.ReminderApp",
+      "bundleIdentifier": "com.halilkrkn.ReminderList",
       "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.halilkrkn.ReminderApp",
+      "package": "com.halilkrkn.Reminder List",
       "versionCode": 1,
 
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splash.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },

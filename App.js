@@ -112,7 +112,7 @@ export default class App extends React.Component {
             <AntDesign name="plus" size={16} color={colors.blue} />
           </TouchableOpacity>
 
-          <Text style={styles.add}>Hatırlatıcı Ekle</Text>
+          <Text style={styles.add}>Liste Ekle</Text>
         </View>
 
         <View style={{ height: 275, paddingLeft: 32 }}>

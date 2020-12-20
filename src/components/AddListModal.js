@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
   },
   title: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: "bold",
     color: colors.black,
     alignSelf: "center",
