@@ -22,7 +22,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.halilkrkn.Reminder List",
+      "package": "com.halilkrkn.ReminderList",
       "versionCode": 1,
 
       "adaptiveIcon": {
