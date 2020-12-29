@@ -4,7 +4,7 @@
 
 # Uygulamada Kullanılan Teknolojiler:
 
-- Recat Native üzerinden yapıldı.
+- Recat Native kullanılarak yapıldı.
 - Firebase ile authentication işlemleri yapılıp anonim kullanıcı girişi sağlatıldı.
 - Firebase 'in Firestore database kullanılarak oluşturulan listeler ve listelerin içerine ekleyeceğimiz görevleri kaydediyoruz.
 
