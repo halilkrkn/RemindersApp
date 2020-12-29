@@ -6,7 +6,7 @@
 
 - Recat Native kullanılarak yapıldı.
 - Firebase ile authentication işlemleri yapılıp anonim kullanıcı girişi sağlatıldı.
-- Firebase 'in Firestore database kullanılarak oluşturulan listeler ve listelerin içerine ekleyeceğimiz görevleri kaydediyoruz.
+- Firebase 'in Firestore database kullanılarak oluşturulan listeler ve listelerin içerisine ekleyeceğimiz görevleri kaydediyoruz.
 
 # Uygulamam Huawei AppGallery ve Google Play Store mağazalarına yükleyip yayına sundum.
 
